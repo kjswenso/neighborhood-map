@@ -25,6 +25,8 @@ class App extends Component {
       .then(values => {
         let google = values[0];
         let venues = values[1].response.venues;
+
+        console.log(venues)
         
         this.google = google;
         this.markers = [];
@@ -44,16 +46,25 @@ class App extends Component {
             name: venue.name,
             animation: google.maps.Animation.DROP
           });
+
+         marker.addListener('click', () => {
+          marker.getAnimation() !== null ? 
+            marker.setAnimation(null) : marker.setAnimation(google.maps.Animation.BOUNCE)
+              setTimeout(() => marker.setAnimation(null), 1500)
+        })
+
           this.markers.push(marker);
         });
+
       })
   }
 
   filterVenues = (query) => {
     this.markers.forEach(marker => {
-      marker.name.toLowerCase().includes(query.toLowerCase()) == true ?
+      marker.name.toLowerCase().includes(query.toLowerCase()) === true ?
         marker.setVisible(true) : marker.setVisible(false);
     })
+
 
     this.setState({ query });
   }

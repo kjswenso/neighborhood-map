@@ -17,3 +17,9 @@
     height: 100%;
     background-color: #FFF;
   }
+
+  .sidebar-venue-item {
+    margin: 5px;
+    padding: 2px;
+    border: 1px solid black;
+  }
