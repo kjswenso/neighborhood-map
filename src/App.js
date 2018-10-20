@@ -7,6 +7,13 @@ import { load_google_maps, load_places } from './utils.js'
 
 class App extends Component {
 
+  constructor(props) {
+    super(props);
+    this.state = {
+      query : ''
+    }
+  }
+
   componentDidMount() {
     let googleMapsPromise = load_google_maps();
     let loadPlacesPromise = load_places();
@@ -21,6 +28,7 @@ class App extends Component {
         
         this.google = google;
         this.markers = [];
+        this.infoWindow = new google.maps.InfoWindow();
         this.map = new google.maps.Map(document.getElementById('map'), {
           zoom: 12,
           scrollwheel: true,
@@ -35,16 +43,27 @@ class App extends Component {
             id: venue.id,
             name: venue.name,
             animation: google.maps.Animation.DROP
-          })
-        })
+          });
+          this.markers.push(marker);
+        });
       })
+  }
+
+  filterVenues = (query) => {
+    this.markers.forEach(marker => {
+      marker.name.toLowerCase().includes(query.toLowerCase()) == true ?
+        marker.setVisible(true) : marker.setVisible(false);
+    })
+
+    this.setState({ query });
   }
 
   render() {
 
     return (
       <main>
-        <Map />
+        <Map venues={this.state.venues}
+          filterVenues={this.filterVenues} />
       </main>
     );
   }

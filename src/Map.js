@@ -10,7 +10,8 @@ render() {
      <main>
       <div id="map">
       </div>
-      <Sidebar />
+      <Sidebar venues={this.props.venues} 
+        filterVenues={this.props.filterVenues}/>
      </main>
     )
   }

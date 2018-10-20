@@ -6,7 +6,7 @@ class Sidebar extends Component {
 	render() {
 		return(
 			<div id="sidebar">
-				
+				<input value={this.props.venues} onChange={(e) => { this.props.filterVenues(e.target.value) }}/>
 			</div>
 			)
 	}
