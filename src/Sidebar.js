@@ -6,7 +6,14 @@ class Sidebar extends Component {
 	render() {
 		return(
 			<div id="sidebar">
-				<input value={this.props.venues} onChange={(e) => { this.props.filterVenues(e.target.value) }}/>
+				<input placeholder="search for coffee shops" onChange={(e) => { this.props.filterVenues(e.target.value) }}/>
+				<ol className="sidebar-venue-list" >
+				{this.props.venues && this.props.venues.length > 0 && this.props.venues.map((venue, index) => (
+					<li className="sidebar-venue-item" key={index}>
+					{venue.name}
+					</li>
+					))}
+				</ol>
 			</div>
 			)
 	}

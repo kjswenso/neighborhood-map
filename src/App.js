@@ -63,6 +63,7 @@ class App extends Component {
           this.markers.push(marker);
         });
 
+        this.setState({ venues })
       })
   }
 
