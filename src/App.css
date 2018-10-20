@@ -7,3 +7,14 @@
     margin: 0;
     padding: 0;
   }
+
+  #sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 300px;
+    max-width: 90%;
+    height: 600px;
+    max-height: 100%;
+    background-color: #FFF;
+  }

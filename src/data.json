@@ -1,0 +1,68 @@
+{
+"locations": [{
+  "id": 1,
+  "name": "Red Mesa Mercado",
+  "website": "https://www.facebook.com/redmesamercado1/",
+  "address": "1100 1st Ave N, St Petersburg, Fl 33705",
+  "phone": "(727) 954-7430",
+  "latlng": {
+    "lat": 27.771,
+    "lng": -82.650
+  },
+  "rating": "4.5/5",
+  "description": "California-style Burritos & takeout favorites. Fresh-made tortillas and a market offering a great selection of glorious Mexican staples."
+},
+{
+  "id": 2,
+  "name": "Green Bench Brewing Co.",
+  "website": "http://greenbenchbrewing.com",
+  "address": "1133 Baum Ave North, St. Petersburg, Fl 33705",
+  "phone": "(727) 800-9836",
+  "latlng": {
+    "lat": 27.772,
+    "lng": -82.650
+  },
+  "rating": "4.6/5",
+  "description": "Green Bench Brewing Co. is St. Petersburg’s first craft microbrewery. "
+},
+{
+  "id": 3,
+  "name": "The Bends",
+  "website": "https://www.facebook.com/thebendsbar/",
+  "address": "919 1st Ave N, St Petersburg, Fl 33705",
+  "phone": "(727) 202-8931",
+  "latlng": {
+    "lat": 27.772,
+    "lng": -82.647
+  },
+  "rating": "4.7/5",
+  "description": "A classy dive bar in St. Petersburg, FL."
+},
+{
+  "id": 4,
+  "name": "Coney Island Sandwich Shop",
+  "website": "https://www.facebook.com/Coney-Island-Hot-Dogs-143757712362928/",
+  "address": "250 Dr Martin Luther King Jr St N, St Petersburg, Fl 33705",
+  "phone": "(727) 822-4493",
+  "latlng": {
+    "lat": 27.775,
+    "lng": -82.647
+  },
+  "rating": "4.6/5",
+  "description": "Snug, no-frills American diner with a straightforward menu of sandwiches, hot dogs & milkshakes."
+},
+{
+  "id": 5,
+  "name": "Bandit Coffee Co",
+  "website": "https://banditcoffee.co",
+  "address": "2662 Central Ave, St. Petersburg, FL 33712",
+  "phone": "(727) 836-0817",
+  "latlng": {
+    "lat": 27.771,
+    "lng": -82.669
+  },
+  "rating": "4.9/5",
+  "description": "A multi-roaster coffee bar + roaster, serving single origin coffee in the Grand Central District of St. Petersburg, FL."
+}
+]
+}
