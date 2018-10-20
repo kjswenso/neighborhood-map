@@ -11,6 +11,7 @@ render() {
       <div id="map">
       </div>
       <Sidebar venues={this.props.venues} 
+        query={this.props.query}
         filterVenues={this.props.filterVenues}/>
      </main>
     )

@@ -82,6 +82,7 @@ class App extends Component {
     return (
       <main>
         <Map venues={this.state.venues}
+          query={this.state.query}
           filterVenues={this.filterVenues} />
       </main>
     );
