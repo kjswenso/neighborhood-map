@@ -53,6 +53,13 @@ class App extends Component {
               setTimeout(() => marker.setAnimation(null), 1500)
         })
 
+         google.maps.event.addListener(marker, 'click', () => {
+          this.infoWindow.setContent(marker.name);
+          this.map.setCenter(marker.position);
+          this.infoWindow.open(this.map, marker);
+          this.map.panBy(0, -125)
+         })
+
           this.markers.push(marker);
         });
 
