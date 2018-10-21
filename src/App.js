@@ -69,7 +69,7 @@ setMapMarkers = () => {
          })
 
           this.markers.push(marker);
-        });
+        })
 
         this.setState({ venues })
       })
