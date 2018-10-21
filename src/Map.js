@@ -12,7 +12,8 @@ render() {
       </div>
       <Sidebar venues={this.props.venues} 
         query={this.props.query}
-        filterVenues={this.props.filterVenues}/>
+        filterVenues={this.props.filterVenues}
+        animateList={this.props.animateList} />
      </main>
     )
   }
