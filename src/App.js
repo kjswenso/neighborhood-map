@@ -135,13 +135,16 @@ setMapMarkers = () => {
     return (
       <main className="main">
         <Header openSearch={this.openSearch} />
-        <div id="map"></div>
+        <div id="map" role="application" aria-label="Google Map" ></div>
         <Sidebar venues={this.state.venues}
           query={this.state.query}
           filterVenues={this.filterVenues} 
           animateList={this.animateList} 
           closeSearch={this.closeSearch}
           />
+        <footer className="footer">
+          <p>Created using FourSquare API and React</p>
+        </footer>
       </main>
     );
   }

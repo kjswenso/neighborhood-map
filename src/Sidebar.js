@@ -10,8 +10,8 @@ class Sidebar extends Component {
 			<div id="sidebar">
 			  <div className="search-top">
 				<button className="search-close" onClick={() => {this.props.closeSearch()}}>Close</button>
-				<h2>Search Coffee Locations</h2>
-				<input className="search-bar" placeholder="search for coffee shops" onChange={(e) => { this.props.filterVenues(e.target.value) }}/>
+				<h2 className="search-title">Search Coffee Locations</h2>
+				<input className="search-bar" placeholder="search for coffee shops" aria-label="search locations" onChange={(e) => { this.props.filterVenues(e.target.value) }}/>
 			  </div>
 			  <div className="search-list">
 				<ul className="sidebar-venue-list" >
