@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import './App.css';
-import Map from './Map.js'
+import Sidebar from './Sidebar.js'
+import Header from './Header.js'
 
 import { load_google_maps, load_places } from './utils.js'
 
+//Ryan Waite's walkthrough https://www.youtube.com/watch?v=5J6fs_BlVC0 to get the map in directly and add markers
 
 class App extends Component {
 
@@ -15,8 +17,9 @@ class App extends Component {
     }
   }
 
-  componentDidMount() {
-    let googleMapsPromise = load_google_maps();
+
+setMapMarkers = () => {
+  let googleMapsPromise = load_google_maps();
     let loadPlacesPromise = load_places();
 
     Promise.all([
@@ -46,8 +49,12 @@ class App extends Component {
             id: venue.id,
             name: venue.name,
             animation: google.maps.Animation.DROP
-  
           });
+
+        let infoDisp = '<div class="info-disp">' +
+          '<h4>' + venue.name + '</h4>' +
+          '<p>' + venue.location.formattedAddress + '</p>' +
+          '</div>'
 
          marker.addListener('click', () => {
           marker.getAnimation() !== null ? 
@@ -56,7 +63,7 @@ class App extends Component {
         })
 
          google.maps.event.addListener(marker, 'click', () => {
-          this.infoWindow.setContent(marker.name);
+          this.infoWindow.setContent(infoDisp);
           this.map.setCenter(marker.position);
           this.infoWindow.open(this.map, marker);
          })
@@ -66,6 +73,10 @@ class App extends Component {
 
         this.setState({ venues })
       })
+}
+//get map, set markers, filter venues with query
+  componentDidMount() {
+    this.setMapMarkers();
   }
 
   animateList = (venue) => {
@@ -109,14 +120,28 @@ class App extends Component {
     this.setState({ query });
   }
 
+  openSearch = () => {
+    const sideDisp = document.querySelector('#sidebar');
+    sideDisp.style.display = 'block';
+  }
+
+  closeSearch = () => {
+    const sideDisp = document.querySelector('#sidebar');
+    sideDisp.style.display = 'none';
+  }
+
   render() {
 
     return (
-      <main>
-        <Map venues={this.state.venues}
+      <main className="main">
+        <Header openSearch={this.openSearch} />
+        <div id="map"></div>
+        <Sidebar venues={this.state.venues}
           query={this.state.query}
           filterVenues={this.filterVenues} 
-          animateList={this.animateList} />
+          animateList={this.animateList} 
+          closeSearch={this.closeSearch}
+          />
       </main>
     );
   }
