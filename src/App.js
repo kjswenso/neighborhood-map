@@ -90,26 +90,6 @@ setMapMarkers = () => {
               setTimeout(() => marker.setAnimation(null), 1500)
   }
 
-  li_click = (venue) => {
-    let marker = this.markers.filter(m => m.venue.id === venue.id)[0];
-    /*let info_obj = this.info_boxes.filter(i => i.id === venue.id)[0];
-    let infoBox = info_obj && info_obj.contents || "nothing...";
-    if(marker && infoBox) {
-      if (marker.getAnimation() !== null) { marker.setAnimation(null); }
-      else { marker.setAnimation(this.google.maps.Animation.BOUNCE); }
-      setTimeout(() => { marker.setAnimation(null) }, 1500);
-
-      this.infowindow.setContent(infoBox);
-      this.map.setZoom(13);
-      this.map.setCenter(marker.position);
-      this.infowindow.open(this.map, marker);
-      this.map.panBy(0, -125);
-      if(window.innerWidth < 769) {
-        this.toggleSideBar();
-      }*/
-      console.log(marker)
-    }
-
   filterVenues = (query) => {
     this.markers.forEach(marker => {
       marker.name.toLowerCase().includes(query.toLowerCase()) === true ?

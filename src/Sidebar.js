@@ -16,7 +16,7 @@ class Sidebar extends Component {
 			  <div className="search-list">
 				<ul className="sidebar-venue-list" >
 				{this.props.venues && this.props.venues.length > 0 && this.props.venues.filter(venue => venue.name.toLowerCase().includes(this.props.query.toLowerCase())).map((venue, index) => (
-					<li className="sidebar-venue-item" key={index} onClick={() => { this.props.animateList(venue) }} >
+					<li className="sidebar-venue-item" tabindex="0" key={index} onClick={() => { this.props.animateList(venue) }} >
 					{venue.name}
 					<br />
 					{venue.location.address}
