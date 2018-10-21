@@ -12,10 +12,22 @@
     position: fixed;
     top: 0;
     left: 0;
+    margin: 5px;
+    padding: 5px;
     width: 300px;
     max-width: 90%;
     height: 100%;
     background-color: #FFF;
+  }
+
+  ul {
+    margin: 0px;
+    padding: 0px;
+  }
+
+  .searchBar {
+    width: 95%;
+    background-color: #d8d8d8;
   }
 
   .sidebar-venue-item {

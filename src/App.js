@@ -37,7 +37,7 @@ class App extends Component {
           center: { lat: venues[0].location.lat, lng: venues[0].location.lng }
         })
 
-        venues.forEach(venue => {
+        venues.forEach(venue => { 
           let marker = new google.maps.Marker({
             position: { lat: venue.location.lat, lng: venue.location.lng },
             map: this.map,
@@ -45,6 +45,7 @@ class App extends Component {
             id: venue.id,
             name: venue.name,
             animation: google.maps.Animation.DROP
+  
           });
 
          marker.addListener('click', () => {
